@@ -7,19 +7,17 @@ struct Node{
 };
 
 
-Node* Insert(Node *head, int data){
-		Node* curr = head;
-		Node* addon = new Node();
-		addon->data = data;
-		curr->next = addon;
-		if (!head)
-			return addon;
-		
-		while (curr->next){
-			curr = curr->next;	
-		}
+Node* Insert(Node *head, int data, int position){
+	Node* curr = head;
+	Node* addon = new Node();
+	addon->data = data;
+	for (int i = 0; i < position; i++){
+		curr = curr->next;	
+	
+	}
 
-		return head;
+
+	return head;
 }
 
 void Print (Node *head) {

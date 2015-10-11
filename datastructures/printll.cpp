@@ -7,7 +7,6 @@ struct Node {
 	struct Node* next;
 };
 
-
 void Print (Node *head) {
 	Node* curr = head;
 	while (curr){
