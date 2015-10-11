@@ -7,18 +7,26 @@ struct Node{
 };
 
 
-Node* Insert(Node *head, int data, int position){
-	Node* curr = head;
-	Node* addon = new Node();
+Node* InsertNth(Node *head, int data, int position){
+	Node* addon = new Node;
 	addon->data = data;
-	for (int i = 0; i < position; i++){
-		curr = curr->next;	
-	
-	}
+	addon->next = NULL;
 
-
+	if (!head){ //if empty list
+		head = addon;
+	} else if (position == 0) {
+		addon->next = head;
+		return (head = addon);
+	} else {
+		Node* temp = head;
+		while (position-- != 1) { //stop at position - 1
+			temp = temp->next;
+		}
+		addon->next = temp->next;
+		temp->next = addon;
+	};
 	return head;
-}
+};
 
 void Print (Node *head) {
 	Node* curr = head;
@@ -37,7 +45,6 @@ int main(){
 	test2->data = 2;
 	test2->next = test; 
 
-	Insert(Insert(Insert(test2, 3), 4), 1);
 	Print(test2);
 
 	return 0;
