@@ -6,6 +6,21 @@ struct Node{
 		Node* next;
 };
 
+int CompareLists(Node *headA, Node* headB){
+	  // This is a "method-only" submission.   
+  // You only need to complete this method   
+   while((headA!= NULL) || (headB!= NULL)){  
+     if((headA == NULL) || (headB == NULL))  
+       return 0;  
+     if(headA->data != headB->data){  
+       return 0;  
+     }  
+     headA = headA->next;  
+     headB = headB->next;  
+   }  
+   return 1;  
+};
+
 //must declare outside temp for this method
 //try it iteratively and with only one pointer!
 struct Node* temp;
