@@ -8,8 +8,6 @@ see process breakdown in moleskine
 	* base case and build
 	* data structure brainstorm
 
-#############
-
 1. clear up any questions
 	* ask questions
 	* fully understand the given problem
