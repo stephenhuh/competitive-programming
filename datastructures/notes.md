@@ -39,6 +39,8 @@ stack frames must clear
 ##BST
 a binary tree in which for each node, value of all the nodes in left subtree is less or equal and value of all th enodes in right subtree is greater
 
+in-order traversal always looks for minimum value i.e. leftmost child
+
 
 * min-heap vs max-heap
 
