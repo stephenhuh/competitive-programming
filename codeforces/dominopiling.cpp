@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include <sstream>
 #include <cstdio>
 #include <cmath>
@@ -34,5 +33,8 @@ template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
 /////////////////////////////////////////////////////////////////////
 int main()
 {
+	int N = 0, M = 0;
+	cin >> N >> M;
+	cout << ((N * M) / 2);
     return 0;
 }

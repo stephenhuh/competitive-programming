@@ -34,5 +34,40 @@ template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
 /////////////////////////////////////////////////////////////////////
 int main()
 {
+	//algorithm:
+	//create list or vector of integers used.
+	//cool trick: to do it upon insertion
+	//add number of ints given until one has already been used. decrement until it hits 0
+	int num = 0;
+	bool flag = true;
+	cin >> num;
+	int temp = 0;
+	vector<int> v;
+	REP(i,num){
+		cout << "stage 1";
+		cout << v.size();
+		cin >> temp;
+		cout << "stage 2";
+		while (flag){
+			if (v.size() > 0){
+				REP(j, v.size()-1){
+					if (v[j] == temp){
+						temp--;
+						break;
+					} 
+				}
+			}
+			//has gone through every vector element can insert now
+			flag = false;
+		}
+		cout << "going to pushback";
+		v.push_back(temp);
+	}
+	cout << "out of loop";
+	int sum = 0;
+	REP (i, v.size() - 1){
+		sum += v[i];
+	}
+	cout << sum;
     return 0;
 }

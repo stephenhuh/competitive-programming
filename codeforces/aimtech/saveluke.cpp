@@ -34,5 +34,22 @@ template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
 /////////////////////////////////////////////////////////////////////
 int main()
 {
+	//Algo
+	//find middle where luke has no width by comparing speeds to length
+	//spread lukes distance across by speed of same presses
+	//find leftmost pos of luke and compute time it takes
+	double d = 0, L = 0, v1 = 0, v2 = 0;
+	double d1 = 0, d2 = 0;
+	double lukedistance = 0;
+	double leftdistance = 0;
+	cin >> d >> L >> v1 >> v2;
+	//length covered per second 
+	double x = L / (v1 + v2);
+	//total distance covered per press where luke is 0
+	d1 = x * v1, d2 = x * v2;
+	//distribute luke
+	lukedistance =  d / (v1 + v2);
+	leftdistance = d1 - (lukedistance * v1);
+	cout << setprecision(9) << leftdistance / v1;
     return 0;
 }
