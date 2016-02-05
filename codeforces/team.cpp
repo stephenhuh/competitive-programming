@@ -49,5 +49,23 @@ const int MOD = 1000 * 1000 * 1000 + 7;
 /////////////////////////////////////////////////////////////////////
 int main()
 {
+	int outersum = 0;
+	int innersum = 0;
+	ll n = 0;
+	int temp = 0;
+	cin >> n;
+	ll x = n;
+	int times = 3;
+	REP(i, n){
+		while (times--){
+			cin >> temp;
+			innersum += temp;
+		}
+		if (innersum >= 2) outersum++;
+		n = x;
+		innersum = 0;
+		times = 3;
+	}
+	cout << outersum;
     return 0;
 }

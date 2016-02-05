@@ -19,7 +19,7 @@ using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define FOR(i,a,b) for(int i=(a);i<=(b);i++)
 #define FORD(i,a,b) for(int i=(a);i>=(b);i--)
-#define ITR(vector) for(auto it=vector.begin(); it!=vector.end(); it++)
+#define ITR(vec) for(auto it=vec.begin(); it!=vec.end(); it++)
 inline bool EQ(double a, double b) { return fabs(a-b) < 1e-9; }
 const int INF = 1<<29;
 typedef long long ll;
@@ -38,36 +38,21 @@ int main()
 	//create list or vector of integers used.
 	//cool trick: to do it upon insertion
 	//add number of ints given until one has already been used. decrement until it hits 0
-	int num = 0;
-	bool flag = true;
+	long long int num = 0;
 	cin >> num;
-	int temp = 0;
-	vector<int> v;
-	REP(i,num){
-		cout << "stage 1";
-		cout << v.size();
+	long long int temp = 0;
+	vector<long long int> v;
+	while (num--){
 		cin >> temp;
-		cout << "stage 2";
-		while (flag){
-			if (v.size() > 0){
-				REP(j, v.size()-1){
-					if (v[j] == temp){
-						temp--;
-						break;
-					} 
-				}
-			}
-			//has gone through every vector element can insert now
-			flag = false;
+		while((std::find(v.begin(), v.end(), temp)) != v.end()){
+			temp--;
 		}
-		cout << "going to pushback";
-		v.push_back(temp);
+		if (temp >= 0) v.push_back(temp);
 	}
-	cout << "out of loop";
-	int sum = 0;
-	REP (i, v.size() - 1){
-		sum += v[i];
+	long long int sum = 0;
+	for (auto it = v.begin(); it != v.end(); it++){
+		sum += *it;
 	}
 	cout << sum;
-    return 0;
 }
+
