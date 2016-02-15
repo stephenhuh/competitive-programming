@@ -49,15 +49,26 @@ const int MOD = 1000 * 1000 * 1000 + 7;
 /////////////////////////////////////////////////////////////////////
 int main()
 {
-	ll n = 0;
+	int n;
+	int c[5] = { 0 };
+	int t, s = 0;
+	
 	cin >> n;
-	double osum = 0;
-	double isum = 0;
-	int temp = 0;
-	while (n--){
-		cin >> temp;
-		isum += temp;
-	}
-	cout << ceil(sum / 4);
+	for (int i = 0; i < n; i++) { cin >> t; c[t]++; }
+	
+	s += c[4];
+	
+	s += c[3]; c[1] -= min(c[3], c[1]);
+	
+	t = c[2] / 2; s += t; c[2] -= 2 * t;
+	
+	if (c[2] > 0) {	s++; c[1] -= min(2, c[1]); }
+		
+	t = c[1] / 4; s += t; c[1] -= 4 * t;
+	
+	if (c[1] > 0) s++;
+	
+	cout << s << endl;
+	
 	return 0;
 }

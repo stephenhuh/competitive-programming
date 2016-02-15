@@ -39,6 +39,18 @@ void pause(){
 /////////////////////////////////////////////////////////////////////
 int main()
 {
+	string input;
+	cin >> input;
+	vector<int> nums;
+	for (int i = 0; i < input.length(); i+=2){
+		nums.push_back(input[i] - '0');
+	}
+	std::sort(nums.begin(), nums.end());
+	REP(i, nums.size()){
+		cout << nums[i];
+		if (i == nums.size() - 1) return 0;
+		cout << "+";
+	}
 
     return 0;
 }

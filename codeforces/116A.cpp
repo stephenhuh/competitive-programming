@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <cstdio>
 #include <cmath>
@@ -30,15 +31,40 @@ inline int last_bit(int n) { return n & (-n); }
 inline int ones(int n) { int res = 0; while(n && ++res) n-=n&(-n); return res; }
 template<class T> void chmax(T & a, const T & b) { a = max(a, b); }
 template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
+/////////////////////////////////////////////////////////////////////
+/*
+ *
+ * Stevie Shortcuts
+ *
+ *
+ *
+ */
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double ld;
+
+const double EPS = 1e-9;
+const double PI = acos(-1.0);
+const int MOD = 1000 * 1000 * 1000 + 7;
 void pause(){
 	int x;
-	cout << "Paused... Please enter a key to continue";
+	cout << "Paused... Press any key to continue:" << endl;
 	cin >> x;
-	return;
 }
 /////////////////////////////////////////////////////////////////////
 int main()
 {
-
+	int stops = 0;
+	int exit = 0, enter = 0;
+	int curr = 0;
+	int max = 0;
+	cin >> stops;
+	while (stops--){
+		cin >> exit >> enter;
+		curr -= exit;
+		curr += enter;
+		if (curr > max) max = curr;
+	}
+	cout << max;
     return 0;
 }

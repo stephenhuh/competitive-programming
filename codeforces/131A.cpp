@@ -30,15 +30,49 @@ inline int last_bit(int n) { return n & (-n); }
 inline int ones(int n) { int res = 0; while(n && ++res) n-=n&(-n); return res; }
 template<class T> void chmax(T & a, const T & b) { a = max(a, b); }
 template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
-void pause(){
-	int x;
-	cout << "Paused... Please enter a key to continue";
-	cin >> x;
-	return;
+void PRINT(string s){
+	cout << s << endl;
 }
 /////////////////////////////////////////////////////////////////////
+//
+//
+//
+//reflection: should've noted that lower then consec upper is same as all upper if you do isupper from index 1.
 int main()
 {
-
+	string input;	
+	cin >> input;
+	REP(i, input.length()){
+		//first lowercase, rest uppercase
+		if (input.length() == 1 && islower(input[0])){
+			putchar(toupper(input[0]));
+			return 0;
+		}
+		if (islower(input[0]) && isupper(input[1])){
+			for (i = 2; i<input.length(); i++){
+				if (!isupper(input[i])){
+					cout << input;
+					return 0;
+				}
+			}
+			//confirmed only first is lowercase
+			for (i = 0; i < input.length(); i++){
+				if (isupper(input[i])) putchar(tolower(input[i]));
+				if (islower(input[i])) putchar(toupper(input[i]));
+			}
+			return 0;
+		} 
+		//only uppercase
+		if (isupper(input[i])) {
+			if (i == (input.length() - 1)) {
+				REP(i, input.length()){
+					putchar(tolower(input[i]));
+				}
+				return 0;
+			}
+			continue;
+		} else break;
+	}
+	cout << input;
     return 0;
 }
