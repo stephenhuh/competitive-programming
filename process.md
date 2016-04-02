@@ -3,15 +3,6 @@
 
 see process breakdown in moleskine
 1. clear up any questions
-2. pseudocode
-	* write TEST CASES (TDD)
-	* run through example (examplify)
-	* pattern matching
-	* simplify and generalize
-	* base case and build
-	* data structure brainstorm
-
-1. clear up any questions
 	* ask questions
 	* fully understand the given problem
 	* draw it out!! write it out

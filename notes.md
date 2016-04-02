@@ -1,3 +1,14 @@
+#WHY????
+* learn to take concepts and abstract them for different situations
+* develop further empathy for SE
+* ability to program and translate thoughts into code
+* think on your feet
+* self confidence in engineering capabilities
+* not be an idea guy
+* you get jobs like this
+
+
+
 #CODECHEF - DS & ALGORITHMS - https://discuss.codechef.com/questions/48877/data-structures-and-algorithms
 ##Binary Search
 * requires that object is sorted.
@@ -112,6 +123,9 @@ number |= 1 << x;
 
 clearing a bit:
 number &= ~(1 << x)
+
+multiply by 2:
+number << 1
 
 
 
