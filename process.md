@@ -1,6 +1,3 @@
-
-
-
 see process breakdown in moleskine
 1. clear up any questions
 	* ask questions
