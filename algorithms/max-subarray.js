@@ -99,8 +99,6 @@ function maxSubArray2(arr, n){
     }
     let ans = Math.max(left_MSS, right_MSS);
     return Math.max(ans,leftsum+rightsum);
-  
-
 }
 
 console.log("Max Sub Array 2 : ", maxSubArray2([3,-2,5,-1],4));
@@ -108,6 +106,26 @@ console.log("Max Sub Array 2 : ", maxSubArray2([3,-2,5,-1],4));
 /* O(n) - kadanes algorithm
  */
 
+function maxSumSubArray(nums){
+	let maxSoFar = 0; //this assumes that array is non full negatives but this does handle the empty array case
+	let maxEnding = 0;
+	for (let i = 0; i < nums.length; i++){
+		maxEnding = Math.max(nums[i], maxEnding[i]);
+		maxSoFar = Math.max(maxSoFar, maxEnding);
+	}
+	return maxSoFar;
+}
+
+
+function maxSumSubArray(nums){
+	let maxSoFar = nums[0];
+	let maxEnding = nums[0];
+	for (let i = 1; i < nums.length; i++){
+		maxEnding = Math.max(nums[i], maxEnding[i]);
+		maxSoFar = Math.max(maxSoFar, maxEnding);
+	}
+	return maxSoFar;
+}
 
 
 
