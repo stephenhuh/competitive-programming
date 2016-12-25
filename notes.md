@@ -127,6 +127,17 @@ number &= ~(1 << x)
 multiply by 2:
 number << 1
 
+##Logic
+NOT NOR is AND --> draw it out
+
+##Setting ALL bits!
+    x = x | x >> 1;
+    x = x | x >> 2;
+    x = x | x >> 4;
+    x = x | x >> 8;
+    x = x | x >> 16;
+    return x;
+invaluable
 
 
 
