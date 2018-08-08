@@ -1,0 +1,4 @@
+
+const numJewelsInStones = (J, S) => {
+
+}

@@ -1,0 +1,77 @@
+/*
+  A self-dividing number is a number that is divisible by every digit it contains.
+
+  For example, 128 is a self-dividing number because 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0.
+
+  Also, a self-dividing number is not allowed to contain the digit zero.
+
+  Given a lower and upper number bound, output a list of every possible self dividing number, including the bounds if possible.
+
+  Example 1:
+  Input: 
+  left = 1, right = 22
+  Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]
+  Note:
+
+  The boundaries of each input argument are 1 <= left <= right <= 10000.
+ *
+ *
+ */
+
+var selfDividingNumbers = function (left, right) {
+  //Iterate through left to right with exceptions such as contains 0, less than 10
+  const acc = [];
+  for (let i = left; i <= right; i++) {
+    acc.push(i);  
+  }
+  
+  return acc.filter(check);
+}
+
+var check = function(num) {
+  if (num < 10) {
+    return true;
+  } 
+
+  const nums = num.toString().split('').map(Number); // [Number]
+
+  if (nums.indexOf(0) !== -1) {
+    return false;
+  };
+
+  return nums.every((el) => {
+    if (num % el === 0) {
+      console.log(num, el, "divisible") 
+      return true;
+    } else {
+      console.log(num, el, "na") 
+      return false;
+    }
+  })
+
+  /*
+  nums.forEach((el) => {
+    console.log(num, el, num % el);
+    if (num % el !== 0) {
+      console.log(num, el, "FALSE");
+      return false;
+    }
+  });
+  */
+
+  return true;
+}
+
+console.log(selfDividingNumbers(1, 22));
+
+/*
+ * forEach doesnt early terminate
+ * scaffolding out functions works decently if youre flexible with it
+ * nums.every returns a boolean value
+ * remember to keep in mind block scope
+ * split('').map(Number) technique
+ * if you have a conditional returning a boolean, then you can refactor it to just return the conditional.
+ * true && 5 = 5;
+ * false && 5 = false; //short circuiting essentially
+ */
+

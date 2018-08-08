@@ -1,0 +1,19 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "HammingDistance.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testRegex": "",
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^23.4.2"
+  }
+}
