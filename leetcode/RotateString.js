@@ -46,3 +46,8 @@ var _compareWithWhile = function(A, B) {
  * While decrementing is equivalent to for i = 0 i < length;
  *
  */
+
+//This is a clever solution, by copying the string to the end, we essentially can see all shifts that re possible
+const _rotateString = (A, B) => {
+  return (B+B).indexOf(A) != -1 && A.length == B.length;
+}
