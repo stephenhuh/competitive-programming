@@ -62,3 +62,12 @@ var check = function (grid, i, j) {
 
 
 
+/*
+ *
+ * Recursion stack and unfolding the stack properly.
+ * By not calling recurse at the end you're not allowing the function to unravel
+ * 0 > undefined => false
+ * 2D arrays and looping through both. i for outer, j for inner
+ *
+ /
+
