@@ -62,7 +62,9 @@ function getPermutations(string) {
  * The hard part in this problem was spotting subproblems to be solved, how does AB help ABC permutations? Run through examples and be patient with trying to find 
  * underlying patterns, its the beauty of mathematics!
  *
- *
+ * Here we used a top-down recursion method, by breaking down the string continuously until we could have the base case.
+ * This was done according to problem spec, but could also be done bottom-up iteratively. This is dynamic programming because of the overlapping subproblems.
+ * Notice that to get permutations of "ABC" we can use the permutations of "AB" and transitively and consequently, the permutations of "A".
  */
 
 
