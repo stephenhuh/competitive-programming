@@ -57,7 +57,12 @@ function getPermutations(string) {
  * 2. Set.prototype.forEach exists!
  * 3. Inserting any string into another string can be generalized to sliceLeft, add, sliceRight.
  * 4. Dont always think your recursive calls need to be at the tail, though this does happen, when you need custom behavior when unwinding call stack, recursive 
- *    could be called in middle/
+ *    could be called in middle.
+ *
+ * The hard part in this problem was spotting subproblems to be solved, how does AB help ABC permutations? Run through examples and be patient with trying to find 
+ * underlying patterns, its the beauty of mathematics!
+ *
+ *
  */
 
 
