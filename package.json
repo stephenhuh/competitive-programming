@@ -1,0 +1,19 @@
+{
+  "name": "competitive-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenhuh/competitive-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenhuh/competitive-programming/issues"
+  },
+  "homepage": "https://github.com/stephenhuh/competitive-programming#readme"
+}

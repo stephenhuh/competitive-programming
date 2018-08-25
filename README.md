@@ -1,1 +1,3 @@
-# livecoding-algorithms
+Run tests
+
+$ npm run test -- <file>
