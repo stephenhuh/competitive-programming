@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
-
-def hello():
-    print('hello');
-
 """
-Basic union find usage for cycle detection
+return redundant edge, last in edge array
+if guaranteed to have cycle
 """
 def cycleDetect(edges):
     def find(vertex): 
@@ -16,7 +13,7 @@ def cycleDetect(edges):
         root1 = find(u)
         root2 = find(v)
         if root1 is root2:
-            return True
+            return u,v
         else:
             disjointSet[root1] = root2
 
@@ -29,16 +26,17 @@ def cycleDetect(edges):
     print(disjointSet)
 
     for [u, v] in edges:
-        if union(u, v): return True
+        if union(u,v) is not None:
+            return u,v
 
-    return False
+    return None
 
 def main():
-    edges = [[0,1], [0,5], [1,4], [1, 2], [2,3], [4, 3]]
+    edges = [[1,2], [1,3], [2,3]]
     res = cycleDetect(edges)
-    assert(res is True)
-    res = [[0,1], [0,5], [1,4], [1, 2], [4, 3]]
-    assert(res is False)
+    print('expect [2,3] : actual', res)
+    edges = [[1,2], [2,3], [3,4], [1,4], [1,5]]
+    res = cycleDetect(edges)
+    print('expect [1,4]: actual', res)
 
 main()
-
