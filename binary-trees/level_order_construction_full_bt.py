@@ -38,14 +38,12 @@ def construct_level_order_full(arr):
 def construct_level_order(arr):
     queue = []
     root_val = arr.pop(0)
-
     root = TreeNode(root_val)
     queue.append(root)
 
     while len(queue) is not 0:
         size = len(queue)
         for i in range(size):
-            print(arr)
             curr = queue.pop(0)
 
             if len(arr) is 0:
@@ -73,4 +71,10 @@ def construct_level_order(arr):
 
     return root
 
+construct_level_order([1,2,3,4,5,6,7]).print()
+print('\n')
 construct_level_order([1,2,3,4,None,6,7,8,9]).print()
+print('\n')
+construct_level_order([1,2,3, 4]).print()
+print('\n')
+construct_level_order([1,2]).print()
