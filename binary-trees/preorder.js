@@ -42,7 +42,7 @@ var _recurse = function(root, acc) {
 
 
 
-//I like this one right now more. makes sense and is close to inorder traversal. 
+//I like this one right now more. makes sense and is close to inorder traversal also translates from recursive solution nicely. 
 //the process to res before pushing makes more sense intuitively rn. Though i think my opinion is
 //bound to change fast
 var iterativePreorderv1 = function(root) {
