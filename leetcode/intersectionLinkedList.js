@@ -38,6 +38,7 @@ var getIntersectionNode = function(headA, headB) {
 };
 
 
+//use property that lenA = a + c, lenB = b+c thus by switching we get lenA + lenB = lenB + lenA when c can be >=0
 function getIntersectionNode(headA, headB) {
   if (!headA || !headB) {
     return null;
