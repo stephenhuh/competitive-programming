@@ -32,12 +32,10 @@ var walk = function(copy, i, j) {
     }
 }
 
-/** this version we reduce the space to just storing the values of actual zeroes **/
-/**
- * @param {number[][]} matrix
- * @return {void} Do not return anything, modify matrix in-place instead.
- */
-// NOT IN PLACE - not valid on LC
+/** 
+ * this version we reduce the space to just storing the values of actual zeroes 
+ *  however it uses a pretty hacky way of working around no tuple types via string manip.
+ **/
 var setZeroesv2 = function(matrix) {
     //O(mn)
     let zeroes = [];
@@ -50,6 +48,45 @@ var setZeroesv2 = function(matrix) {
     while (zeroes.length > 0) {
         let [i, j] = zeroes.pop().split(',')
         walk(matrix, Number(i), Number(j));
+    }
+};
+
+var walk = function(copy, i, j) {
+    //first iteration sets i, j to 0
+    //up
+    for (let r = i; r >= 0; r--) {
+        copy[r][j] = 0; 
+    }
+    //first iteration resets i, j to 0
+    //left
+    for (let c = j; c >= 0; c--) {
+        copy[i][c] = 0;
+    }
+    for (let r = 0; r < copy.length; r++) {
+        copy[r][j] = 0;
+    }
+    for (let c = 0; c < copy[0].length; c++) {
+        copy[i][c] = 0;
+    }
+}
+
+
+/**
+ * Just a cleaner alternative to v2 using objects
+ */
+var setZeroesv3 = function(matrix) {
+    let ijs = [];
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] === 0) {
+                ijs.push({i, j})
+            }
+        }
+    }
+    
+    while (ijs.length > 0) {
+        let {i, j} = ijs.pop();
+        walk(matrix, i, j);
     }
 };
 
